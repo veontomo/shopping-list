@@ -1,3 +1,23 @@
-<p>
-  create-item works!
-</p>
+<div class="container">
+  <h1>
+     New shopping cart item
+  </h1>
+  <div class="row">
+    <div class="col-4">Name:</div>
+    <input type="text" [ngModel]="item.name" class="input-sm col-6" />
+  </div>
+  <div class="row pt-1">
+    <div class="col-4">Category:</div>
+    <select [(ngModel)]="item.category" class="input-sm col-6">
+      <option *ngFor="let category of getCategories(); let i = index" value="{{i}}">{{category}}</option>
+    </select>
+  </div>
+  <div class="row pt-1">
+    <div class="col-4"> Price:</div>
+    <input type="number" [(ngModel)]="item.price" class="input-sm col-6" />
+  </div>
+  <div class="row pt-1 pb-2">
+      <div class="col-4"></div>
+    <button (click)="create()" class="btn col-4">Add</button>
+  </div>
+</div>

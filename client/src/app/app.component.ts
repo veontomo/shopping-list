@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CreateItemComponent } from './create-item/create-item.component';
 
 @Component({
   selector: 'app-root',
