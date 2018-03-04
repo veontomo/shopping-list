@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CreateItemComponent } from './create-item/create-item.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateItemComponent
+    CreateItemComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule, FormsModule
