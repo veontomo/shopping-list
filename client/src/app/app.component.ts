@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CreateItemComponent } from './create-item/create-item.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @Component({
   selector: 'app-root',

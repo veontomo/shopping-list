@@ -1,11 +1,16 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {CreateItemComponent} from './create-item/create-item.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { FormsModule } from '@angular/forms';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent, CreateItemComponent, ShoppingCartComponent
       ],
+      imports: [FormsModule]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -22,6 +27,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+    expect(compiled.querySelector('h1').textContent).toContain('shopping cart item');
   }));
 });
