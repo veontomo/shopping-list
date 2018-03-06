@@ -3,18 +3,19 @@
      New shopping cart item
   </h1>
   <div class="row">
-    <div class="col-4">Name:</div>
-    <input type="text" [ngModel]="item.name" class="input-sm col-6" />
+    {{item.name}}
+    <label class="col-4" for="itemName">Name:</label>
+    <input type="text" [(ngModel)]="item.name" class="input-sm col-6" id="itemName"/>
   </div>
   <div class="row pt-1">
-    <div class="col-4">Category:</div>
-    <select [(ngModel)]="item.category" class="input-sm col-6">
+    <label class="col-4" for="itemCategory">Category:</label>
+    <select [(ngModel)]="item.category" class="input-sm col-6" id="itemCategory">
       <option *ngFor="let category of getCategories(); let i = index" value="{{i}}">{{category}}</option>
     </select>
   </div>
   <div class="row pt-1">
-    <label class="col-4" for="price"> Price:</label>
-    <input type="number" [(ngModel)]="item.price" class="input-sm col-6" id="price"/>
+    <label class="col-4" for="itemPrice"> Price:</label>
+    <input type="number" [(ngModel)]="item.price" class="input-sm col-6" id="itemPrice"/>
   </div>
   <div class="row pt-1 pb-2">
       <div class="col-4"></div>
