@@ -50,11 +50,14 @@ describe('CreateItemComponent', () => {
   }));
 
   it('should insert the item price', async(() => {
-    const spy = spyOn(component, 'getCategories').and.returnValue(['first', 'second', 'third']);
-    const category = fixture.debugElement.query(By.css('#itemCategory')).nativeElement;
-    category.value = 2;
-    category.dispatchEvent(new Event('input'));
-    expect(component.item.category).toBe(2);
+    const spy = spyOn(component, 'getCategories').and.returnValue(['first', 'second', 'third', 'fourth']);
+    fixture.detectChanges();
+    const categories = fixture.debugElement.queryAll(By.css('#itemCategory option'));
+    expect(categories.length).toBe(4);
+    expect(categories[0].nativeElement.innerHTML).toBe('first');
+    expect(categories[1].nativeElement.innerHTML).toBe('second');
+    expect(categories[2].nativeElement.innerHTML).toBe('third');
+    expect(categories[3].nativeElement.innerHTML).toBe('fourth');
   }));
 
 
