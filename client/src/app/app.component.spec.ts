@@ -5,6 +5,9 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { ShoppingListService } from './services/shopping-list.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -12,7 +15,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent, CreateItemComponent, ShoppingCartComponent
       ],
-      imports: [FormsModule]
+    imports: [FormsModule, HttpClientModule],
+    providers: [ShoppingListService]
     }).compileComponents();
   }));
   it('should create the app', async(() => {

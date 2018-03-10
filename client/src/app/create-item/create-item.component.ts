@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Item} from '../model/Item';
+import { Item } from '../model/Item';
+import { ShoppingListService } from '../services/shopping-list.service';
 
 @Component({
   selector: 'app-create-item',
@@ -16,16 +17,21 @@ export class CreateItemComponent implements OnInit {
    */
   public item: Item = <Item>{};
 
+  private categories: Array<String> = new Array<String>();
+
   /**
    * Retrieves all available categories
   */
-  public getCategories(): Array<string> {
-    return ['food', 'household', 'other'];
+  public getCategories(): Array<String> {
+    return this.categories;
   }
-  constructor() { }
+  constructor(private service: ShoppingListService) { }
 
   ngOnInit() {
     this.reset();
+    this.service.getCategories().subscribe(
+      (data: Array<String>) => { this.categories = data; },
+       error => console.log(error));
   }
 
   public create() {

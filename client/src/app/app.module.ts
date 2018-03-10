@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CreateItemComponent } from './create-item/create-item.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ShoppingListService } from './services/shopping-list.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,9 +16,9 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ShoppingCartComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [ShoppingListService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

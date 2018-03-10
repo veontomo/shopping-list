@@ -4,6 +4,10 @@ import { CreateItemComponent } from './create-item.component';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { ShoppingListService } from '../services/shopping-list.service';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 describe('CreateItemComponent', () => {
   let component: CreateItemComponent;
@@ -12,7 +16,8 @@ describe('CreateItemComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CreateItemComponent ],
-      imports: [FormsModule]
+      imports: [FormsModule, HttpClientModule],
+      providers: [ShoppingListService]
     })
     .compileComponents();
   }));
