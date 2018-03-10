@@ -49,7 +49,7 @@ describe('CreateItemComponent', () => {
     expect(component.item.price).toBe(123.22);
   }));
 
-  it('should insert the item price', async(() => {
+  it('should have drop down list content', async(() => {
     const spy = spyOn(component, 'getCategories').and.returnValue(['first', 'second', 'third', 'fourth']);
     fixture.detectChanges();
     const categories = fixture.debugElement.queryAll(By.css('#itemCategory option'));
