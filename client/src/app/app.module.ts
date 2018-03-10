@@ -7,13 +7,15 @@ import { CreateItemComponent } from './create-item/create-item.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShoppingListService } from './services/shopping-list.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ShowItemComponent } from './show-item/show-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateItemComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ShowItemComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule

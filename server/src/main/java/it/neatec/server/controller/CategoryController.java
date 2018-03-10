@@ -1,6 +1,8 @@
 package it.neatec.server.controller;
 
+import io.reactivex.Observable;
 import io.reactivex.Single;
+import io.reactivex.schedulers.Schedulers;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,4 +21,5 @@ public class CategoryController {
         var data = List.of("food", "household", "other");
         return Single.just(data);
     }
+
 }
