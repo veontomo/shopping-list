@@ -8,12 +8,13 @@ import { DebugElement } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ShoppingListService } from './services/shopping-list.service';
+import { ShowItemComponent } from './show-item/show-item.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, CreateItemComponent, ShoppingCartComponent
+        AppComponent, CreateItemComponent, ShoppingCartComponent, ShowItemComponent
       ],
     imports: [FormsModule, HttpClientModule],
     providers: [ShoppingListService]

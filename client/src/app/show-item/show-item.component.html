@@ -1,3 +1,9 @@
-<p>
-  show-item works!
-</p>
+<div class="container">
+  <h3 class="text-info">
+    {{item?.name}}
+  </h3>
+  <div class="row">
+    <div class="col-4">{{item?.category}}</div>
+    <div class="col-4">{{item?.price | currency: 'EUR'}}</div>
+  </div>
+</div>
