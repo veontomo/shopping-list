@@ -19,7 +19,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'it.neatec'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.9
+sourceCompatibility = 1.10
 
 repositories {
 	mavenCentral()
