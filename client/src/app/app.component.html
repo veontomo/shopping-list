@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <app-create-item></app-create-item>
+      <app-create-item (itemEmitter)="acceptItem($event)"></app-create-item>
     </div>
     <div class="col-6">
-      <app-shopping-cart></app-shopping-cart>
+      <app-shopping-cart [items]="accumulator"></app-shopping-cart>
     </div>
   </div>
 </div>
