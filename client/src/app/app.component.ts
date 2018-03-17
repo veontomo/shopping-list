@@ -12,7 +12,7 @@ export class AppComponent {
 
   title = 'app';
 
-   accumulator: Array<Item> = [];
+  accumulator: Array<Item> = [];
 
   public acceptItem(item: Item) {
     this.accumulator.push(item);

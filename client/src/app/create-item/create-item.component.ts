@@ -28,9 +28,19 @@ export class CreateItemComponent implements OnInit {
 
 
   /**
-   * item which fields should be initialized by this component
+   * item name
    */
-  public item: Item = < Item > {};
+  public name: String = '';
+
+  /**
+   * item price
+   */
+  public price: number;
+
+  /**
+   * item's category
+   */
+  public category: number;
 
   private categories: Array < String > = new Array < String > ();
 
@@ -58,9 +68,9 @@ export class CreateItemComponent implements OnInit {
    */
   public emitItem() {
     const copy: Item = < Item > {
-      price: this.item.price,
-      name: this.item.name,
-      category: this.item.category
+      price: this.price,
+      name: this.name,
+      category: this.category
     };
     this.itemEmitter.emit(copy);
     this.reset();
@@ -70,9 +80,9 @@ export class CreateItemComponent implements OnInit {
    * Reset the input fields of the item
    */
   private reset() {
-    this.item.name = '';
-    this.item.price = undefined;
-    this.item.category = 0;
+    this.name = '';
+    this.price = undefined;
+    this.category = 0;
   }
 
 }
