@@ -1,23 +1,25 @@
 <div class="container">
   <h1>
-     New shopping cart item
+    New shopping cart item
   </h1>
-  <div class="row">
-    <label class="col-4" for="itemName">Name:</label>
-    <input type="text" [(ngModel)]="name" class="input-sm col-6" id="itemName"/>
-  </div>
-  <div class="row pt-1">
-    <label class="col-4" for="itemCategory">Category:</label>
-    <select [(ngModel)]="category" class="input-sm col-6" id="itemCategory">
-      <option *ngFor="let category of getCategories(); let i = index" value="{{i}}">{{category}}</option>
-    </select>
-  </div>
-  <div class="row pt-1">
-    <label class="col-4" for="itemPrice"> Price:</label>
-    <input type="number" [(ngModel)]="price" class="input-sm col-6" id="itemPrice"/>
-  </div>
-  <div class="row pt-1 pb-2">
+  <form  #createItemForm="ngForm">
+    <div class="row">
+      <label class="col-4" for="itemName">Name:</label>
+      <input type="text" [(ngModel)]="name" name="name" required  class="input-sm col-6" id="itemName" />
+    </div>
+    <div class="row pt-1">
+      <label class="col-4" for="itemCategory">Category:</label>
+      <select [(ngModel)]="category" class="input-sm col-6" id="itemCategory" name="category">
+        <option *ngFor="let category of getCategories(); let i = index" value="{{i}}">{{category}}</option>
+      </select>
+    </div>
+    <div class="row pt-1">
+      <label class="col-4" for="itemPrice"> Price:</label>
+      <input type="number" [(ngModel)]="price" class="input-sm col-6" id="itemPrice" required name="price"/>
+    </div>
+    <div class="row pt-1 pb-2">
       <div class="col-4"></div>
-    <button (click)="emitItem()" class="btn col-4">Add</button>
-  </div>
+      <button (click)="emitItem()" [disabled]="!createItemForm.form.valid" class="btn col-4">Add</button>
+    </div>
+  </form>
 </div>

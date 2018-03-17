@@ -5,6 +5,9 @@ import {
   EventEmitter
 } from '@angular/core';
 import {
+  FormsModule
+} from '@angular/forms';
+import {
   Item
 } from '../model/Item';
 import {
@@ -25,12 +28,10 @@ export class CreateItemComponent implements OnInit {
    */
   @Output() itemEmitter: EventEmitter < Item > = new EventEmitter();
 
-
-
   /**
    * item name
    */
-  public name: String = '';
+  public name: String;
 
   /**
    * item price
@@ -62,17 +63,16 @@ export class CreateItemComponent implements OnInit {
   }
 
   /**
-   * Clone current item and emit it to the parent component.
-   * Without cloning, the object's reference is passed to the parent component
-   * and the binding to that object is maintaned.
+   * Create an Item instance and emit it to the parent component.
    */
   public emitItem() {
-    const copy: Item = < Item > {
+    const item: Item = < Item > {
       price: this.price,
       name: this.name,
       category: this.category
     };
-    this.itemEmitter.emit(copy);
+    console.log('sending item', item);
+    this.itemEmitter.emit(item);
     this.reset();
   }
 
@@ -80,7 +80,7 @@ export class CreateItemComponent implements OnInit {
    * Reset the input fields of the item
    */
   private reset() {
-    this.name = '';
+    this.name = undefined;
     this.price = undefined;
     this.category = 0;
   }
