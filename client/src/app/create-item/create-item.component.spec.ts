@@ -54,19 +54,17 @@ describe('CreateItemComponent', () => {
     expect(compiled.textContent).toContain('Add');
   }));
 
-  it('should insert the item name', async (() => {
-    const nameElem: DebugElement = fixture.debugElement.query(By.css('#itemName'));
-    const nameNative = nameElem.nativeElement;
-    nameNative.value = 'test-product';
-    nameNative.dispatchEvent(new Event('input'));
-    expect(component.name).toBe('test-product');
-  }));
 
   it('should insert the item price', async (() => {
     const priceElem: DebugElement = fixture.debugElement.query(By.css('#itemPrice'));
+    const btnElem: DebugElement = fixture.debugElement.query(By.css('button'));
+    const nameElem: DebugElement = fixture.debugElement.query(By.css('#itemName'));
     const priceNative = priceElem.nativeElement;
+    const nameNative = nameElem.nativeElement;
+    nameNative.value = 'Cookies';
     priceNative.value = '123.22';
-    priceNative.dispatchEvent(new Event('input'));
+    btnElem.nativeElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
     expect(component.price).toBe(123.22);
   }));
 

@@ -18,6 +18,7 @@ public class CategoryController {
     @GetMapping("/categories")
     @CrossOrigin(origins = "http://localhost:4200")
     public Single<List<String>> getCategories() {
+        System.out.println("returning categories");
         var data = List.of("food", "household", "other");
         return Single.just(data);
     }

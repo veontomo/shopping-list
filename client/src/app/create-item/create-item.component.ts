@@ -54,7 +54,6 @@ export class CreateItemComponent implements OnInit {
   constructor(private service: ShoppingListService) {}
 
   ngOnInit() {
-    this.reset();
     this.service.getCategories().subscribe(
       (data: Array < String > ) => {
         this.categories = data;
@@ -80,8 +79,8 @@ export class CreateItemComponent implements OnInit {
    * Reset the input fields of the item
    */
   private reset() {
-    this.name = undefined;
-    this.price = undefined;
+    this.name = null;
+    this.price = null;
     this.category = 0;
   }
 
